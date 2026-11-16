@@ -1,0 +1,24 @@
+
+# GET - перше отримання картинки
+curl -sS -D - -o 418-first.jpg http://127.0.0.1:3000/418
+
+# GET - повторне отримання картинки
+curl -sS -D - -o 418-second.jpg http://127.0.0.1:3000/418
+
+# PUT - збереження власної картинки
+curl -i -X PUT -H "Content-Type: image/jpeg" --data-binary "@test-image.jpg" http://127.0.0.1:3000/418
+
+# GET - отримання власної картинки після PUT
+curl -sS -D - -o 418-after-put.jpg http://127.0.0.1:3000/418
+
+# DELETE - видалення картинки
+curl -i -X DELETE http://127.0.0.1:3000/418
+
+# DELETE - повторне видалення відсутньої картинки
+curl -i -X DELETE http://127.0.0.1:3000/418
+
+# GET - неіснуючий код
+curl -i http://127.0.0.1:3000/999
+
+# POST - заборонений метод
+curl -i -X POST http://127.0.0.1:3000/418
