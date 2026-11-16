@@ -3,3 +3,9 @@ cache/
 .env
 *.log
 .DS_Store
+
+# Тестові зображення
+/418-after-put.jpg
+/418-first.jpg
+/418-second.jpg
+/test-image.jpg
